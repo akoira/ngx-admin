@@ -6,6 +6,7 @@ import { NbCardModule } from '@nebular/theme';
 
 import { ThemeModule } from '../../@theme/theme.module';
 import { MapsRoutingModule, routedComponents } from './maps-routing.module';
+import { NgxMapboxGLModule } from 'ngx-mapbox-gl';
 
 @NgModule({
   imports: [
@@ -15,6 +16,9 @@ import { MapsRoutingModule, routedComponents } from './maps-routing.module';
     MapsRoutingModule,
     NgxEchartsModule,
     NbCardModule,
+    NgxMapboxGLModule.withConfig({
+      accessToken: 'pk.eyJ1IjoicGVydm9saW5lciIsImEiOiJjazlncGxkYTcwMHZhM21xZmZxcW93ZDk1In0.-ZYY09wPnstNElzXbmqnOg',
+    }),
   ],
   exports: [],
   declarations: [

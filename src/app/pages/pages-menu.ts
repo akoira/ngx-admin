@@ -164,6 +164,10 @@ export const MENU_ITEMS: NbMenuItem[] = [
         title: 'Search Maps',
         link: '/pages/maps/searchmap',
       },
+      {
+        title: 'MapBox',
+        link: '/pages/maps/mapbox',
+      },
     ],
   },
   {

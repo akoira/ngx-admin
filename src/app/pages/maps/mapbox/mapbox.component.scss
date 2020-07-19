@@ -1,0 +1,13 @@
+@import '../../../@theme/styles/themes';
+
+@include nb-install-component() {
+
+  nb-card-body {
+    padding: 0;
+  }
+
+  mgl-map {
+    height: 100%;
+    width: 100%;
+  }
+}
