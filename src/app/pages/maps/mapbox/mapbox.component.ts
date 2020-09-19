@@ -1,26 +1,49 @@
-import {AfterViewInit, Component, OnInit} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+import {NbCardBodyComponent} from "@nebular/theme";
 import mapboxgl from 'mapbox-gl';
-import 'mapbox-gl/dist/mapbox-gl.css';
+
+// import 'mapbox-gl/dist/mapbox-gl.css';
 
 
 @Component({
   selector: 'ngx-mapbox',
   styleUrls: ['./mapbox.component.scss'],
-  templateUrl:  './mapbox.component.html',
+  templateUrl: './mapbox.component.html',
 })
 export class MapboxComponent implements OnInit, AfterViewInit {
-  // private map: mapboxgl.Map;
-  // constructor() {
-  //   mapboxgl.accessToken = 'pk.eyJ1IjoicGVydm9saW5lciIsImEiOiJjazlncGxkYTcwMHZhM21xZmZxcW93ZDk1In0.-ZYY09wPnstNElzXbmqnOg';
-  // }
+  @ViewChild('container') container: ElementRef;
+  // @ViewChild(MapComponent) map: MapComponent;
+  map: mapboxgl.Map;
 
   ngOnInit(): void {
-    // setTimeout(() => this.buildMap(), 1000);
   }
 
   ngAfterViewInit() {
-    // setTimeout(() => this.map.invalidateSize(), 1000);
   }
+
+  mapLoaded(map) {
+    this.map = map;
+
+    map.addSource('maine', {
+      'type': 'geojson',
+      'data': 'https://handsondataviz.org/data/ct-outline.geojson',
+    });
+    map.addLayer({
+      'id': 'maine',
+      'type': 'fill',
+      'source': 'maine',
+      'layout': {},
+      'paint': {
+        'fill-color': '#088',
+        'fill-opacity': 0.8,
+      },
+    });
+  }
+
+  mapResize(body: NbCardBodyComponent) {
+    console.info(body);
+  }
+
 
   buildMap() {
     // this.map = new mapboxgl.Map({

@@ -1,10 +1,12 @@
 <nb-card>
   <nb-card-header>Mapbox Maps</nb-card-header>
-  <nb-card-body>
+  <nb-card-body #container (resize)="mapLoaded(container)">
     <mgl-map
-      [style]="'mapbox://styles/mapbox/streets-v9'"
+      [style]="'mapbox://styles/mapbox/satellite-streets-v11'"
       [zoom]="[9]"
-      [center]="[-74.50, 40]"
+      [center]="[-72.6734, 41.7658]"
+      (load) = "mapLoaded($event)"
     >
-    </mgl-map>  </nb-card-body>
+    </mgl-map>
+  </nb-card-body>
 </nb-card>
