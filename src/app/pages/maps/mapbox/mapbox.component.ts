@@ -1,5 +1,5 @@
 import {AfterViewInit, Component, ElementRef, OnInit, ViewChild} from '@angular/core';
-import {NbCardBodyComponent} from "@nebular/theme";
+import {NbCardBodyComponent} from '@nebular/theme';
 import mapboxgl from 'mapbox-gl';
 
 // import 'mapbox-gl/dist/mapbox-gl.css';
