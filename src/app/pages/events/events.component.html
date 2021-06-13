@@ -1,0 +1,18 @@
+<nb-card>
+  <nb-card-header>
+    <button nbButton (click)="toggle()">
+      <nb-icon class="action-icon" icon="collapse-outline"></nb-icon>
+    </button>
+    <input nbInput placeholder="Period" [nbDatepicker]="rangepicker" width="100%">
+    <nb-rangepicker #rangepicker></nb-rangepicker>
+  </nb-card-header>
+  <nb-card-body>
+    <nb-layout>
+      <nb-sidebar tag="left"></nb-sidebar>
+      <nb-layout-column class="colored-column-warning">
+        <ngx-echarts-year-component></ngx-echarts-year-component>
+      </nb-layout-column>
+    </nb-layout>
+  </nb-card-body>
+</nb-card>
+
