@@ -5,4 +5,6 @@
  */
 export const environment = {
   production: true,
+  wsEndpoint: 'ws://ws.home/ct/event',
+  reconnectInterval: 2000,
 };
