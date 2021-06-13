@@ -78,7 +78,6 @@ export class YearComponent implements AfterViewInit, OnDestroy {
       try {
         const event = state['ct'].event;
         const years = Array.from(event.keys()).sort();
-        console.log(years.map(v => v.toString()));
         const options = {
           legend: {
             data: years.map(v => v.toString()),
@@ -158,7 +157,6 @@ export class YearComponent implements AfterViewInit, OnDestroy {
         //   ],
         // };
       } catch (e) {
-        console.log(e);
       }
     });
   }
